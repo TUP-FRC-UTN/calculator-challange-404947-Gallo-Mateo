@@ -1,0 +1,35 @@
+<div class="container align-items-center text-center">
+    <div class="m-1">
+        <label for="val1" class="" >1st Value</label>
+    </div>
+    <div class="">
+        <input type="text" class="" id="val1" placeholder="Insert number"
+            (input)="val1Changed($event)"
+        > 
+    </div>
+
+    <div class="m-1">
+        <label for="val2" class="" >2nd Value</label>
+    </div>
+    <div class="">
+        <input type="text" class="" id="val2" placeholder="Insert number"
+                (input)="val2Changed($event)"
+        > 
+    </div>
+
+    <div class="m-1">
+        <label for="res" class="">Result</label>
+    </div>
+    <div class="">
+        <input type="text" class="bg-secondary text-black" id="res"disabled
+                [value]="result"
+        > 
+    </div>
+</div>
+
+<app-calcu-actions 
+    [val1]="val1" 
+    [val2]="val2"
+    (resultV2)="onOperationOptionClicked($event)"
+    (cleanInputs)="onCleanInputsClicked($event)">
+</app-calcu-actions>
